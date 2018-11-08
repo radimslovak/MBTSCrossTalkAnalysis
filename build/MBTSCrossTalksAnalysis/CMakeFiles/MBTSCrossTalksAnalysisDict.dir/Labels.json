@@ -1,0 +1,26 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/build/MBTSCrossTalksAnalysis/CMakeFiles/MBTSCrossTalksAnalysisDictReflexDict.cxx",
+			"labels" : 
+			[
+				"MBTSCrossTalksAnalysis"
+			]
+		},
+		{
+			"file" : "/afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/source/MBTSCrossTalksAnalysis/MBTSCrossTalksAnalysis/MBTSCrossTalksAnalysisDict.h"
+		},
+		{
+			"file" : "/afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/source/MBTSCrossTalksAnalysis/MBTSCrossTalksAnalysis/selection.xml"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"MBTSCrossTalksAnalysis"
+		],
+		"name" : "MBTSCrossTalksAnalysisDict"
+	}
+}

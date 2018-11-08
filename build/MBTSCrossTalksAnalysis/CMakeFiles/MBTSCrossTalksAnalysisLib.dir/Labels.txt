@@ -1,0 +1,6 @@
+# Target labels
+ MBTSCrossTalksAnalysis
+# Source files and their labels
+/afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/source/MBTSCrossTalksAnalysis/MBTSCrossTalksAnalysis/MBTSCrossTalksAnalysis.h
+/afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/source/MBTSCrossTalksAnalysis/MBTSCrossTalksAnalysis/MBTSCrossTalksAnalysisDict.h
+/afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/source/MBTSCrossTalksAnalysis/Root/MBTSCrossTalksAnalysis.cxx

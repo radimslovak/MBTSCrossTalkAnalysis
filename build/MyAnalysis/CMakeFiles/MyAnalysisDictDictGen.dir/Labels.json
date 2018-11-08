@@ -1,0 +1,22 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/build/MyAnalysis/CMakeFiles/MyAnalysisDictDictGen"
+		},
+		{
+			"file" : "/afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/build/MyAnalysis/CMakeFiles/MyAnalysisDictDictGen.rule"
+		},
+		{
+			"file" : "/afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/build/MyAnalysis/CMakeFiles/MyAnalysisDict.dsomap.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"MyAnalysis"
+		],
+		"name" : "MyAnalysisDictDictGen"
+	}
+}

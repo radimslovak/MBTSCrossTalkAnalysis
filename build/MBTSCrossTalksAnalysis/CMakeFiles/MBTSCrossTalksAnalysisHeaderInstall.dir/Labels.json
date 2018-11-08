@@ -1,0 +1,19 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/build/x86_64-slc6-gcc62-opt/include/MBTSCrossTalksAnalysis"
+		},
+		{
+			"file" : "/afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/build/x86_64-slc6-gcc62-opt/include/MBTSCrossTalksAnalysis.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"MBTSCrossTalksAnalysis"
+		],
+		"name" : "MBTSCrossTalksAnalysisHeaderInstall"
+	}
+}

@@ -1,0 +1,22 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/build/x86_64-slc6-gcc62-opt/bin/ATestRun_eljob.py"
+		},
+		{
+			"file" : "/afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/source/MyAnalysis/share/ATestRun_eljob.py"
+		},
+		{
+			"file" : "/afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/build/x86_64-slc6-gcc62-opt/bin/ATestRun_eljob.py.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"MyAnalysis"
+		],
+		"name" : "MyAnalysisScriptsInstall"
+	}
+}

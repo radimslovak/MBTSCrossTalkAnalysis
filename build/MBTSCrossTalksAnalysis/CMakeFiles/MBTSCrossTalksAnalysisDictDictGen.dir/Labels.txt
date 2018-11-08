@@ -1,0 +1,6 @@
+# Target labels
+ MBTSCrossTalksAnalysis
+# Source files and their labels
+/afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/build/MBTSCrossTalksAnalysis/CMakeFiles/MBTSCrossTalksAnalysisDictDictGen
+/afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/build/MBTSCrossTalksAnalysis/CMakeFiles/MBTSCrossTalksAnalysisDictDictGen.rule
+/afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/build/MBTSCrossTalksAnalysis/CMakeFiles/MBTSCrossTalksAnalysisDict.dsomap.rule
