@@ -119,7 +119,7 @@ void ATestRun_eljob (const std::string& submitDir)
 
 
   const char* inputFilePath = gSystem->ExpandPathName ("/afs/cern.ch/work/r/rslovak/RunTaking2018/eos/express_00365318/");
-  SH::ScanDir().filePattern("data18_hi.00365318.express_express.recon.AOD.x580._lb0063._SFO-ALL._0003.1").scan(sh,inputFilePath);
+  SH::ScanDir().filePattern("data18_hi.00365318.express_express.recon.AOD.x580._lb026*._SFO-ALL._0001.1").scan(sh,inputFilePath);
 
 
 
@@ -135,7 +135,7 @@ void ATestRun_eljob (const std::string& submitDir)
   // this is the basic description of our job
   EL::Job job;
   job.sampleHandler (sh); // use SampleHandler in this job
-  job.options()->setDouble (EL::Job::optMaxEvents, 500); // for testing purposes, limit to run over the first 500 events only!
+  job.options()->setDouble (EL::Job::optMaxEvents, -1); // for testing purposes, limit to run over the first 500 events only!
 
   // add our algorithm to the job
   EL::AnaAlgorithmConfig alg;

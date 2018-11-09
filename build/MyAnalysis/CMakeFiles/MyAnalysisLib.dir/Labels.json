@@ -8,7 +8,13 @@
 			"file" : "/afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/source/MyAnalysis/MyAnalysis/MyxAODAnalysis.h"
 		},
 		{
+			"file" : "/afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/source/MyAnalysis/MyAnalysis/Utils.h"
+		},
+		{
 			"file" : "/afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/source/MyAnalysis/Root/MyxAODAnalysis.cxx"
+		},
+		{
+			"file" : "/afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/source/MyAnalysis/Root/Utils.cxx"
 		}
 	],
 	"target" : 

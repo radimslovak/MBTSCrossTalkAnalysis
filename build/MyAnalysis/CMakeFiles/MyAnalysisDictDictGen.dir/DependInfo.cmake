@@ -70,6 +70,9 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/src/PhysicsAnalysis/D3PDTools/EventLoopGrid"
   "/cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/src/PhysicsAnalysis/D3PDTools/EventLoop"
   "/cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/src/PhysicsAnalysis/D3PDTools/SampleHandler"
+  "/cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/src/Event/xAOD/xAODForward"
+  "/cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/src/Event/xAOD/xAODTrigL1Calo"
+  "/cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/src/Event/xAOD/xAODHIEvent"
   )
 
 # Targets to which this target links.

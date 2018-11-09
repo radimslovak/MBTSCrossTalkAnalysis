@@ -94,8 +94,6 @@ x86_64-slc6-gcc62-opt/lib/libMyAnalysisDict.so: /cvmfs/atlas.cern.ch/repo/sw/sof
 x86_64-slc6-gcc62-opt/lib/libMyAnalysisDict.so: /cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/lib/libxAODEventInfo.so
 x86_64-slc6-gcc62-opt/lib/libMyAnalysisDict.so: /cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/lib/libPATInterfaces.so
 x86_64-slc6-gcc62-opt/lib/libMyAnalysisDict.so: /cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/lib/libTrigDecisionToolLib.so
-x86_64-slc6-gcc62-opt/lib/libMyAnalysisDict.so: /cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/lib/libxAODBase.so
-x86_64-slc6-gcc62-opt/lib/libMyAnalysisDict.so: /cvmfs/atlas-nightlies.cern.ch/repo/sw/21.2/2018-11-08T0411/AnalysisBase/21.2.52/InstallArea/x86_64-slc6-gcc62-opt/../../../../AnalysisBaseExternals/21.2.52/InstallArea/x86_64-slc6-gcc62-opt/lib/libPhysics.so
 x86_64-slc6-gcc62-opt/lib/libMyAnalysisDict.so: /cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/lib/libTrigNavStructure.so
 x86_64-slc6-gcc62-opt/lib/libMyAnalysisDict.so: /cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/lib/libTrigRoiConversionLib.so
 x86_64-slc6-gcc62-opt/lib/libMyAnalysisDict.so: /cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/lib/libxAODTrigger.so
@@ -117,6 +115,11 @@ x86_64-slc6-gcc62-opt/lib/libMyAnalysisDict.so: /cvmfs/atlas.cern.ch/repo/sw/sof
 x86_64-slc6-gcc62-opt/lib/libMyAnalysisDict.so: /cvmfs/atlas-nightlies.cern.ch/repo/sw/21.2/2018-11-08T0411/AnalysisBase/21.2.52/InstallArea/x86_64-slc6-gcc62-opt/../../../../AnalysisBaseExternals/21.2.52/InstallArea/x86_64-slc6-gcc62-opt/lib/libNet.so
 x86_64-slc6-gcc62-opt/lib/libMyAnalysisDict.so: /cvmfs/atlas-nightlies.cern.ch/repo/sw/21.2/2018-11-08T0411/AnalysisBase/21.2.52/InstallArea/x86_64-slc6-gcc62-opt/../../../../AnalysisBaseExternals/21.2.52/InstallArea/x86_64-slc6-gcc62-opt/lib/libMathCore.so
 x86_64-slc6-gcc62-opt/lib/libMyAnalysisDict.so: /cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/lib/libxAODEventFormat.so
+x86_64-slc6-gcc62-opt/lib/libMyAnalysisDict.so: /cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/lib/libxAODForward.so
+x86_64-slc6-gcc62-opt/lib/libMyAnalysisDict.so: /cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/lib/libxAODTrigL1Calo.so
+x86_64-slc6-gcc62-opt/lib/libMyAnalysisDict.so: /cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/lib/libxAODBase.so
+x86_64-slc6-gcc62-opt/lib/libMyAnalysisDict.so: /cvmfs/atlas-nightlies.cern.ch/repo/sw/21.2/2018-11-08T0411/AnalysisBase/21.2.52/InstallArea/x86_64-slc6-gcc62-opt/../../../../AnalysisBaseExternals/21.2.52/InstallArea/x86_64-slc6-gcc62-opt/lib/libPhysics.so
+x86_64-slc6-gcc62-opt/lib/libMyAnalysisDict.so: /cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/lib/libxAODHIEvent.so
 x86_64-slc6-gcc62-opt/lib/libMyAnalysisDict.so: /cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/lib/libxAODCore.so
 x86_64-slc6-gcc62-opt/lib/libMyAnalysisDict.so: /cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/lib/libAthContainers.so
 x86_64-slc6-gcc62-opt/lib/libMyAnalysisDict.so: /cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/lib/libAthLinks.so

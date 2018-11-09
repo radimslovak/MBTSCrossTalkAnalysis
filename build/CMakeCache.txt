@@ -481,7 +481,7 @@ MEMORYCHECK_SUPPRESSIONS_FILE:FILEPATH=
 MyAnalysisDict_LIB_DEPENDS:STATIC=general;-Wl,--no-as-needed;general;MyAnalysisLib;
 
 //Dependencies for the target
-MyAnalysisLib_LIB_DEPENDS:STATIC=general;AnaAlgorithmLib;general;xAODEventInfo;general;xAODJet;general;AsgAnalysisInterfaces;general;TrigDecisionToolLib;general;TrigConfInterfaces;general;EventLoopGrid;general;dl;
+MyAnalysisLib_LIB_DEPENDS:STATIC=general;AnaAlgorithmLib;general;xAODEventInfo;general;xAODJet;general;AsgAnalysisInterfaces;general;TrigDecisionToolLib;general;TrigConfInterfaces;general;EventLoopGrid;general;xAODForward;general;xAODHIEvent;general;dl;
 
 //Path to a program.
 P4COMMAND:FILEPATH=P4COMMAND-NOTFOUND

@@ -12,6 +12,13 @@
 #include <TrigDecisionTool/TrigDecisionTool.h>
 
 
+//#include "MyAnalysis/Utils.h"
+
+#include "TH1.h"
+#include "TH2.h"
+
+
+
 class MyxAODAnalysis : public EL::AnaAlgorithm
 {
  public:
@@ -23,7 +30,18 @@ class MyxAODAnalysis : public EL::AnaAlgorithm
   virtual StatusCode execute () override;
   virtual StatusCode finalize () override;
 
+  // calculate MBTS number 
+  int mod_num(float eta, float phi);
+
+  double dR(double eta1, double phi1, double eta2, double phi2);
+
+  int getCentralityBin(Int_t centralityScheme, float FCal_Et);
+  int getCentralityNBins(Int_t centralityScheme);
+
  private:
+
+  int m_eventCounter;
+
   //grl
   asg::AnaToolHandle<IGoodRunsListSelectionTool> m_grl;
  
@@ -31,8 +49,7 @@ class MyxAODAnalysis : public EL::AnaAlgorithm
   asg::AnaToolHandle<Trig::TrigDecisionTool> m_trigDecisionTool;
   asg::AnaToolHandle<TrigConf::ITrigConfigTool> m_trigConfigTool;
 
-
- 
+  
   // Configuration, and any other types of variables go here.
   //float m_cutValue;
   //TTree *m_myTree;

@@ -378,6 +378,33 @@ Root/MyxAODAnalysis.cxx.s:
 	cd /afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/build && $(MAKE) -f MyAnalysis/CMakeFiles/MyAnalysisLib.dir/build.make MyAnalysis/CMakeFiles/MyAnalysisLib.dir/Root/MyxAODAnalysis.cxx.s
 .PHONY : Root/MyxAODAnalysis.cxx.s
 
+Root/Utils.o: Root/Utils.cxx.o
+
+.PHONY : Root/Utils.o
+
+# target to build an object file
+Root/Utils.cxx.o:
+	cd /afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/build && $(MAKE) -f MyAnalysis/CMakeFiles/MyAnalysisLib.dir/build.make MyAnalysis/CMakeFiles/MyAnalysisLib.dir/Root/Utils.cxx.o
+.PHONY : Root/Utils.cxx.o
+
+Root/Utils.i: Root/Utils.cxx.i
+
+.PHONY : Root/Utils.i
+
+# target to preprocess a source file
+Root/Utils.cxx.i:
+	cd /afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/build && $(MAKE) -f MyAnalysis/CMakeFiles/MyAnalysisLib.dir/build.make MyAnalysis/CMakeFiles/MyAnalysisLib.dir/Root/Utils.cxx.i
+.PHONY : Root/Utils.cxx.i
+
+Root/Utils.s: Root/Utils.cxx.s
+
+.PHONY : Root/Utils.s
+
+# target to generate assembly for a file
+Root/Utils.cxx.s:
+	cd /afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/build && $(MAKE) -f MyAnalysis/CMakeFiles/MyAnalysisLib.dir/build.make MyAnalysis/CMakeFiles/MyAnalysisLib.dir/Root/Utils.cxx.s
+.PHONY : Root/Utils.cxx.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -408,6 +435,9 @@ help:
 	@echo "... Root/MyxAODAnalysis.o"
 	@echo "... Root/MyxAODAnalysis.i"
 	@echo "... Root/MyxAODAnalysis.s"
+	@echo "... Root/Utils.o"
+	@echo "... Root/Utils.i"
+	@echo "... Root/Utils.s"
 .PHONY : help
 
 

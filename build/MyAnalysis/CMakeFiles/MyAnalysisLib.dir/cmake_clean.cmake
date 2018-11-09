@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "../x86_64-slc6-gcc62-opt/include/MyAnalysis"
   "../x86_64-slc6-gcc62-opt/bin/ATestRun_eljob.py"
   "CMakeFiles/MyAnalysisLib.dir/Root/MyxAODAnalysis.cxx.o"
+  "CMakeFiles/MyAnalysisLib.dir/Root/Utils.cxx.o"
   "../x86_64-slc6-gcc62-opt/lib/libMyAnalysisLib.pdb"
   "../x86_64-slc6-gcc62-opt/lib/libMyAnalysisLib.so"
 )
