@@ -37,11 +37,13 @@ class MyxAODAnalysis : public EL::AnaAlgorithm
 
   int getCentralityBin(Int_t centralityScheme, float FCal_Et);
   int getCentralityNBins(Int_t centralityScheme);
+  int setCentralityScheme(int centalityScheme);
+
 
  private:
 
   int m_eventCounter;
-
+  int m_centralityScheme;
   //grl
   asg::AnaToolHandle<IGoodRunsListSelectionTool> m_grl;
  

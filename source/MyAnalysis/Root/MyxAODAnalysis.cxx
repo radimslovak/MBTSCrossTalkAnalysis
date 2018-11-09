@@ -33,7 +33,7 @@ MyxAODAnalysis :: MyxAODAnalysis (const std::string& name,
   // declare the tool handle as a property on the algorithm
   m_grl.declarePropertyFor (this, "grlTool");
 
-
+  m_centralityScheme = 31;   
 }
 
 
@@ -73,7 +73,7 @@ StatusCode MyxAODAnalysis :: initialize ()
   ANA_CHECK (book (TH1F ("h_jet_Pt", "h_jet_Pt", 100, 0, 500))); // jet pt [GeV]
   ANA_CHECK (book (TH2F ("h2_jet_EtaPhi", "h2_jet_EtaPhi", 100, -5, 5, 64, -TMath::Pi(), TMath::Pi() )));
 
-  for (int cent = 0; cent < 6; ++cent)  {
+  for (int cent = 0; cent < getCentralityNBins(m_centralityScheme); ++cent)  {
     ANA_CHECK (book (TH1F (Form("h_jet_Pt_c%i",cent), ";p_{T,jet} [GeV];N", 100, 0, 500))); 
 
 
@@ -144,6 +144,7 @@ StatusCode MyxAODAnalysis :: execute ()
   //trigger
 
   std::vector<std::string> trig_pattern;
+  trig_pattern.push_back("HLT_noalg_eb_L1TE50");
   trig_pattern.push_back("HLT_j75_ion_L1TE50");
   trig_pattern.push_back("HLT_j100_ion_L1TE50");
 
@@ -257,24 +258,131 @@ StatusCode MyxAODAnalysis :: execute ()
 
 
   // get jet container of interest
-  const xAOD::JetContainer* jets = 0;
-  ANA_CHECK(evtStore()->retrieve( jets, "AntiKt4HIJets" ));
+  const xAOD::JetContainer* DFjets = 0;
+  ANA_CHECK(evtStore()->retrieve( DFjets, "AntiKt4HIJets" ));
   //ANA_MSG_INFO ("execute(): number of jets = " << jets->size());
 
-
-
   // loop over the jets in the container
-  for (auto jet : *jets) {
+  for (auto jet : *DFjets) {
     
-   hist ("h_jet_Pt")->Fill (jet->pt() * 0.001); // GeV
+    hist ("h_jet_Pt")->Fill (jet->pt() * 0.001); // GeV
+    hist("h_jet_Pt_c"+std::to_string(cent_bin))->Fill(jet->pt() * 0.001);
+        
+    if (jet->pt() *0.001 > 30) 
+      hist ("h2_jet_EtaPhi")->Fill( jet->eta(), jet->phi());
 
-   hist("h_jet_Pt_c"+std::to_string(cent_bin))->Fill(jet->pt() * 0.001);
+
+    const xAOD::JetFourMom_t jet_us_4mom = jet->jetP4("JetUnsubtractedScaleMomentum");
+    //  m_Jet_us_pt    .push_back( jet_us_4mom.pt()*1e-3);
+    // m_Jet_us_eta   .push_back( jet_us_4mom.eta() );
+    //m_Jet_us_phi   .push_back( jet_us_4mom.phi() );
+    //m_Jet_us_e     .push_back( jet_us_4mom.e()*1e-3);
+    
+    const xAOD::JetFourMom_t jet_s_4mom = jet->jetP4("JetSubtractedScaleMomentum");
+    //m_Jet_s_pt    .push_back( jet_s_4mom.pt()*1e-3);
+    //m_Jet_s_eta   .push_back( jet_s_4mom.eta() );
+    //m_Jet_s_phi   .push_back( jet_s_4mom.phi() );
+    //m_Jet_s_e     .push_back( jet_s_4mom.e()*1e-3);
+    const xAOD::JetFourMom_t jet_em_4mom = jet->jetP4("JetEMScaleMomentum");
+    //m_Jet_em_pt    .push_back( jet_em_4mom.pt()*1e-3);
+    //m_Jet_em_eta   .push_back( jet_em_4mom.eta() );
+    //m_Jet_em_phi   .push_back( jet_em_4mom.phi() );
+    //m_Jet_em_e     .push_back( jet_em_4mom.e()*1e-3);
+    
+  } // end for loop over DF jets    
 
 
 
-   if (jet->pt() *0.001 > 30) 
-     hist ("h2_jet_EtaPhi")->Fill( jet->eta(), jet->phi());
-  } // end for loop over jets
+
+
+  // get jet container of interest                                                                                                                                              
+  const xAOD::JetContainer* jets = 0;
+  ANA_CHECK(evtStore()->retrieve( jets, "AntiKt4HIJets" ));
+  //ANA_MSG_INFO ("execute(): number of jets = " << jets->size());                                                                                                              
+
+  // loop over the jets in the container                                                                                                                                        
+  for (auto jet : *jets) {
+
+    hist ("h_jet_Pt")->Fill (jet->pt() * 0.001); // GeV                                                                                                                        
+    hist("h_jet_Pt_c"+std::to_string(cent_bin))->Fill(jet->pt() * 0.001);
+
+
+
+    if (jet->pt() *0.001 > 30)
+      hist ("h2_jet_EtaPhi")->Fill( jet->eta(), jet->phi());
+
+
+
+    const xAOD::JetFourMom_t jet_us_4mom = jet->jetP4("JetUnsubtractedScaleMomentum");
+    //  m_Jet_us_pt    .push_back( jet_us_4mom.pt()*1e-3);                                                                                                                         // m_Jet_us_eta   .push_back( jet_us_4mom.eta() );                                                                                                                             //m_Jet_us_phi   .push_back( jet_us_4mom.phi() );                                                                                                                              //m_Jet_us_e     .push_back( jet_us_4mom.e()*1e-3);                                                                                                                         
+    const xAOD::JetFourMom_t jet_s_4mom = jet->jetP4("JetSubtractedScaleMomentum");
+    //m_Jet_s_pt    .push_back( jet_s_4mom.pt()*1e-3);                                                                                                                             //m_Jet_s_eta   .push_back( jet_s_4mom.eta() );                                                                                                                                //m_Jet_s_phi   .push_back( jet_s_4mom.phi() );                                                                                                                                //m_Jet_s_e     .push_back( jet_s_4mom.e()*1e-3);                                                                                                                           
+    const xAOD::JetFourMom_t jet_em_4mom = jet->jetP4("JetEMScaleMomentum");
+    //m_Jet_em_pt    .push_back( jet_em_4mom.pt()*1e-3);                                                                                                                           //m_Jet_em_eta   .push_back( jet_em_4mom.eta() );                                                                                                                              //m_Jet_em_phi   .push_back( jet_em_4mom.phi() );                                                                                                                              //m_Jet_em_e     .push_back( jet_em_4mom.e()*1e-3); 
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  const xAOD::JetContainer* trig_jets = 0;
+  //ANA_CHECK(evtStore()->retrieve( trig_jets, "HLT_xAOD__JetContainer_a4ionemsubjesISdfFS" ));
+  ANA_CHECK(evtStore()->retrieve( trig_jets, "HLT_xAOD__JetContainer_a4ionemsubjesFS" ));
+  
+
+  for (auto trig_jet : *trig_jets) {
+
+    //m_Jet_trig_pt       .push_back( trig_jet->pt()*1e-3);
+    //m_Jet_trig_eta      .push_back( trig_jet->eta() );
+    //m_Jet_trig_phi      .push_back( trig_jet->phi() );
+    //m_Jet_trig_e        .push_back( trig_jet->e()*1e-3 );
+
+    const xAOD::JetFourMom_t jet_trig_us_4mom = trig_jet->jetP4("JetUnsubtractedScaleMomentum");
+    //m_Jet_trig_us_pt    .push_back( jet_trig_us_4mom.pt()*1e-3);
+    //m_Jet_trig_us_eta   .push_back( jet_trig_us_4mom.eta() );
+    //m_Jet_trig_us_phi   .push_back( jet_trig_us_4mom.phi() );
+    //m_Jet_trig_us_e     .push_back( jet_trig_us_4mom.e()*1e-3);
+    
+    const xAOD::JetFourMom_t jet_trig_s_4mom = trig_jet->jetP4("JetSubtractedScaleMomentum");
+    //m_Jet_trig_s_pt    .push_back( jet_trig_s_4mom.pt()*1e-3);
+    //m_Jet_trig_s_eta   .push_back( jet_trig_s_4mom.eta() );
+    //m_Jet_trig_s_phi   .push_back( jet_trig_s_4mom.phi() );
+    //m_Jet_trig_s_e     .push_back( jet_trig_s_4mom.e()*1e-3);
+    const xAOD::JetFourMom_t trig_jet_em_4mom = trig_jet->jetP4("JetEMScaleMomentum");
+    //m_Jet_trig_em_pt    .push_back( trig_jet_em_4mom.pt()*1e-3);
+    //m_Jet_trig_em_eta   .push_back( trig_jet_em_4mom.eta() );
+    //m_Jet_trig_em_phi   .push_back( trig_jet_em_4mom.phi() );
+    //m_Jet_trig_em_e     .push_back( trig_jet_em_4mom.e()*1e-3);
+  }// end jet loop                                     
+
+
+  const xAOD::JetContainer* trig_df_jets = 0;
+  //  ANA_CHECK(evtStore()->retrieve( trig_df_jets, "HLT_xAOD__JetContainer_a4ionemsubjesISdfvnFS" ));
+  ANA_CHECK(evtStore()->retrieve( trig_df_jets, "HLT_xAOD__JetContainer_a4ionemsubjesISFS" ));
+
+  for (auto trig_df_jet : *trig_df_jets) {
+ 
+    //m_Jet_df_trig_pt       .push_back( trig_df_jet->pt()*1e-3);
+    //m_Jet_df_trig_eta      .push_back( trig_df_jet->eta() );
+    //m_Jet_df_trig_phi      .push_back( trig_df_jet->phi() );
+    //m_Jet_df_trig_e        .push_back( trig_df_jet->e()*1e-3 );
+  }
+ 
+
+
+
 
 
 
@@ -335,47 +443,47 @@ double MyxAODAnalysis::dR(double eta1, double phi1, double eta2, double phi2) {
 int MyxAODAnalysis::getCentralityBin(Int_t centralityScheme, float FCal_Et)
 // @brief: returns a global bin [0-9] based on centralityScheme, MTGlobalEvent, and MTEvent (e.g. position of leading jet wrt RP)                                             
 {
-  Float_t centrality;
+  Float_t centrality = FCal_Et;
   if (centralityScheme==1)
     return 0;
 
   else if(centralityScheme == 2)  {
-    centrality = FCal_Et;
+
     // 2011, 98%, for fragmentation functions analysis                                                                                                                        
     if ((centrality >= 0.6624) && (centrality <= 10.0000) ) return 0; //0-40%                                                                                                 
     if ((centrality >= 0.0146) && (centrality < 0.6624)) return 1;  //40-90%  zatim pro nova data                                                                             
     return -1;
   }
-
   else if (centralityScheme == 3)  {
 
-    centrality = FCal_Et;
+
     //TODO fix cent labels in comments                                                                                                                                        
     if  (2.38 <= centrality) return 0; //0-10%                                                                                                                                
     if ( 1.22 <= centrality) return 1; //10-20%                                                                                                                               
     if ( 0.56 <= centrality) return 2; //20-30                                                                                                                                
     if ( 0.22 <= centrality) return 3; //30-40%                                                                                                                               
-    if ( 0.02 <= centrality) return 4; //40-50%                                                                                                                               
+    if ( 0.02 <= centrality) return 4; //40-60%                                                                                                                               
     if (0.02 > centrality)   return 5; //60-80%                                                                                                                               
 
     return -1;
 
   }
-
-  else if (centralityScheme == 3)  {
-
-    centrality = FCal_Et;
-    //TODO fix cent labels in comments                                                                                                                                        
-    if  (2.38 <= centrality) return 0; //0-10%                                                                                                                                
-    if ( 1.22 <= centrality) return 1; //10-20%                                                                                                                               
-    if ( 0.56 <= centrality) return 2; //20-30                                                                                                                                
-    if ( 0.22 <= centrality) return 3; //30-40%                                                                                                                               
-    if ( 0.02 <= centrality) return 4; //40-50%                                                                                                                               
-    if (0.02 > centrality)   return 5; //60-80%                                                                                                                               
+  else if (centralityScheme == 31) {
+  
+    if ( 2.98931 <=centrality && centrality< 4.9  ) return 0;           // 0-10%
+    if ( 2.04651 <=centrality && centrality< 2.98931  ) return 1;        // 10-20%
+    if ( 1.36875 <=centrality && centrality< 2.04651  ) return 2;        // 20-30%
+    if ( 0.87541 <=centrality && centrality< 1.36875  ) return 3;        // 30-40%
+    if ( 0.525092 <=centrality && centrality< 0.87541  ) return 4;  // 40-50%
+    if ( 0.289595 <=centrality && centrality< 0.525092  ) return 5;  // 50-60%
+    if ( 0.14414  <=centrality && centrality< 0.289595 ) return 6;                // 60-70%
+    if ( 0.063719 <=centrality && centrality< 0.14414 ) return 7;                // 70-80%
 
     return -1;
 
   }
+  
+
   else {
     centrality = 0;
     return -1;
@@ -388,7 +496,16 @@ int MyxAODAnalysis::getCentralityNBins(Int_t centralityScheme)  {
   if (centralityScheme==2) return 2;
   if (centralityScheme==3) return 6;
   if (centralityScheme==7) return 7;
-
+  if (centralityScheme==31) return 8;
+  
   else return 1;
 }
 
+int MyxAODAnalysis::  setCentralityScheme(int centalityScheme) {
+
+
+  m_centralityScheme = centalityScheme;
+  return 0;
+
+
+  }
