@@ -44,6 +44,9 @@ class MyxAODAnalysis : public EL::AnaAlgorithm
 
   int m_eventCounter;
   int m_centralityScheme;
+
+  std::map<std::string, std::pair<int, float>> m_trigInfo;
+
   //grl
   asg::AnaToolHandle<IGoodRunsListSelectionTool> m_grl;
  

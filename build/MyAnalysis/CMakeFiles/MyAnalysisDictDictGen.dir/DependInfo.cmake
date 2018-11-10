@@ -25,12 +25,12 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/source/MyAnalysis"
-  "/cvmfs/atlas-nightlies.cern.ch/repo/sw/21.2/2018-11-08T0411/AnalysisBase/21.2.52/InstallArea/x86_64-slc6-gcc62-opt/RootCore/include"
+  "/cvmfs/atlas-nightlies.cern.ch/repo/sw/21.2/2018-11-09T0410/AnalysisBase/21.2.52/InstallArea/x86_64-slc6-gcc62-opt/RootCore/include"
   "/afs/cern.ch/user/r/rslovak/analysis/MBTSCrossTalksAnalysis/source/MyAnalysis/MyAnalysis"
   "/cvmfs/atlas-nightlies.cern.ch/repo/sw/21.2/2018-11-08T0411/AnalysisBaseExternals/21.2.52/InstallArea/x86_64-slc6-gcc62-opt/include"
   "/cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/src/PhysicsAnalysis/D3PDTools/AnaAlgorithm"
   "/cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/src/Control/AthToolSupport/AsgTools"
-  "/cvmfs/atlas-nightlies.cern.ch/repo/sw/21.2/2018-11-08T0411/AnalysisBase/21.2.52/InstallArea/x86_64-slc6-gcc62-opt/../../../../AnalysisBaseExternals/21.2.52/InstallArea/x86_64-slc6-gcc62-opt/include"
+  "/cvmfs/atlas-nightlies.cern.ch/repo/sw/21.2/2018-11-09T0410/AnalysisBase/21.2.52/InstallArea/x86_64-slc6-gcc62-opt/../../../../AnalysisBaseExternals/21.2.52/InstallArea/x86_64-slc6-gcc62-opt/include"
   "/cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/src/Control/xAODRootAccessInterfaces"
   "/cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/src/Control/xAODRootAccess"
   "/cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/src/Control/AthContainers"
@@ -45,7 +45,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/src/Event/xAOD/xAODBase"
   "/cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/src/Event/xAOD/xAODBTagging"
   "/cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/src/Event/xAOD/xAODTracking"
-  "/cvmfs/atlas-nightlies.cern.ch/repo/sw/21.2/2018-11-08T0411/AnalysisBase/21.2.52/InstallArea/x86_64-slc6-gcc62-opt/../../../../AnalysisBaseExternals/21.2.52/InstallArea/x86_64-slc6-gcc62-opt/include/eigen3"
+  "/cvmfs/atlas-nightlies.cern.ch/repo/sw/21.2/2018-11-09T0410/AnalysisBase/21.2.52/InstallArea/x86_64-slc6-gcc62-opt/../../../../AnalysisBaseExternals/21.2.52/InstallArea/x86_64-slc6-gcc62-opt/include/eigen3"
   "/cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/src/DetectorDescription/GeoPrimitives"
   "/cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/src/Event/EventPrimitives"
   "/cvmfs/atlas.cern.ch/repo/sw/software/21.2/AnalysisBase/21.2.48/InstallArea/x86_64-slc6-gcc62-opt/src/Event/xAOD/xAODMuon"

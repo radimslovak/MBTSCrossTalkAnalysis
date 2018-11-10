@@ -28,7 +28,7 @@ void ATestRun_eljob (const std::string& submitDir)
 
 
   const char* inputFilePath = gSystem->ExpandPathName ("/eos/atlas/atlastier0/tzero/prod/data18_hi/express_express/00365502/data18_hi.00365502.express_express.recon.AOD.x586/");
-  SH::ScanDir().filePattern("data18_hi.00365502.express_express.recon.AOD.x586._lb02*._SFO-ALL._0001.1").scan(sh,inputFilePath);
+  SH::ScanDir().filePattern("data18_hi.00365502.express_express.recon.AOD.x586._lb*._SFO-ALL._0001.1").scan(sh,inputFilePath);
 
 
 
@@ -44,7 +44,11 @@ void ATestRun_eljob (const std::string& submitDir)
   // this is the basic description of our job
   EL::Job job;
   job.sampleHandler (sh); // use SampleHandler in this job
-  job.options()->setDouble (EL::Job::optMaxEvents, -1); // for testing purposes, limit to run over the first 500 events only!
+  job.options()->setDouble (EL::Job::optMaxEvents, 50000); // for testing purposes, limit to run over the first 500 events only!
+
+
+  int centralityScheme = 31;
+
 
   // add our algorithm to the job
   EL::AnaAlgorithmConfig alg;

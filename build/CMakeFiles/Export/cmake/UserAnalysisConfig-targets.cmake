@@ -63,7 +63,7 @@ add_library(UserAnalysis::MyAnalysisLib SHARED IMPORTED)
 
 set_target_properties(UserAnalysis::MyAnalysisLib PROPERTIES
   INTERFACE_INCLUDE_DIRECTORIES "\$<TARGET_PROPERTY:UserAnalysis::MyAnalysisPkg,INTERFACE_INCLUDE_DIRECTORIES>"
-  INTERFACE_LINK_LIBRARIES "AnaAlgorithmLib;xAODEventInfo;xAODJet;AsgAnalysisInterfaces;TrigDecisionToolLib;TrigConfInterfaces;EventLoopGrid;xAODForward;xAODHIEvent"
+  INTERFACE_LINK_LIBRARIES "AnaAlgorithmLib;xAODEventInfo;xAODJet;AsgAnalysisInterfaces;TrigDecisionToolLib;TrigConfInterfaces;EventLoopGrid;xAODForward;xAODHIEvent;xAODCaloEvent"
 )
 
 if(CMAKE_VERSION VERSION_LESS 3.0.0)

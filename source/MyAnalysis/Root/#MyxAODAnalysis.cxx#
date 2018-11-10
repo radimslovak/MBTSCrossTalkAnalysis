@@ -258,11 +258,17 @@ StatusCode MyxAODAnalysis :: execute ()
     auto cg = m_trigDecisionTool->getChainGroup(trig);
     std::string thisTrig = trig;
     //    ANA_MSG_INFO ("execute(): " << thisTrig << ", chain passed(1)/failed(0) = " << cg->isPassed() << ", total chain prescale (L1*HLT) = " << cg->getPrescale());          
-     m_trigInfo[thisTrig] = std::make_pair(cg->isPassed(), cg->getPrescale() );
+    m_trigInfo[thisTrig] = std::make_pair(2d(), cg->getPrescale() );
+
+
   }
 
-  //  ANA_MSG_INFO ("execute(): "<<  m_trigInfo.at("HLT_j100_ion_L1TE50").first, m_trigInfo.at("HLT_j100_ion_L1TE50").second);
 
+  for(auto const &i : m_trigInfo) {
+    ANA_MSG_INFO ("execute(): " << i.first << "  , " << i.second.first << "  , "<< i.second.second);
+
+
+  }
 
 
 
